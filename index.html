@@ -1,0 +1,348 @@
+vadim, [09.02.2026 15:26]
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Дубакин Вадим Юрьевич — CV</title>
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#10121a;
+      --text:#e9eaf0;
+      --muted:#a8adbd;
+      --line:rgba(255,255,255,.08);
+      --accent:#7c5cff;
+      --accent2:#19d3ff;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 520px at 15% 10%, rgba(124,92,255,.22), transparent 60%),
+        radial-gradient(900px 520px at 85% 20%, rgba(25,211,255,.16), transparent 55%),
+        radial-gradient(900px 520px at 50% 95%, rgba(124,92,255,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.9}
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 64px;
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 18px;
+      opacity:.95;
+    }
+    .badge{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow: 0 0 0 6px rgba(124,92,255,.12);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-inner{ padding: 22px; }
+
+    .name{
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 6px;
+    }
+    .role{
+      display:flex; flex-wrap:wrap; gap:10px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .chip b{color:var(--text); font-weight:600}
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 560px){
+      .grid{grid-template-columns:1fr;}
+    }
+    .field{
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.15);
+    }
+    .k{font-size:12px; color:var(--muted); margin-bottom:4px}
+    .v{font-size:14px; color:var(--text); word-break:break-word}
+
+    .photo{
+      height: 100%;
+      min-height: 220px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .photo-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+    }
+    .avatar{
+      width: 100%;
+      max-width: 260px;
+      aspect-ratio: 4 / 5;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      overflow:hidden;
+      position: relative;
+      background: rgba(0,0,0,.18);
+      box-shadow: 0 18px 55px rgba(0,0,0,.55);
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      filter: contrast(1.05) saturate(1.05);
+      display:block;
+    }
+    .avatar:after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(80% 80% at 50% 15%, rgba(255,255,255,.
+
+vadim, [09.02.2026 15:26]
+10), transparent 60%);
+      pointer-events:none;
+    }
+    .actions{
+      padding: 0 18px 18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .btn{
+      flex:1 1 auto;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-size: 14px;
+    }
+    .btn.primary{
+      border-color: rgba(124,92,255,.35);
+      background: linear-gradient(135deg, rgba(124,92,255,.22), rgba(25,211,255,.14));
+    }
+
+    .sections{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    @media (max-width: 860px){
+      .sections{grid-template-columns:1fr;}
+    }
+
+    .h{
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+    .p{
+      margin: 0;
+      color: var(--text);
+      font-size: 15px;
+    }
+    .list{margin:10px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+    .li{
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.14);
+    }
+    .li .title{font-weight:600; margin-bottom:4px}
+    .li .meta{color:var(--muted); font-size:13px}
+    .li ul{margin:10px 0 0; padding-left: 18px; color: var(--text)}
+    .li ul li{margin: 6px 0}
+
+    .footer{
+      margin-top: 18px;
+      padding: 16px 18px;
+      color: var(--muted);
+      font-size: 12px;
+      opacity:.9;
+      border-top: 1px solid var(--line);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="badge"><span class="dot"></span> Лаконичный сайт-резюме</div>
+      <div class="badge">Обновлено: <span id="d"></span></div>
+    </div>
+
+    <div class="hero">
+      <section class="card">
+        <div class="card-inner">
+          <h1 class="name">Дубакин Вадим Юрьевич</h1>
+          <div class="role">
+            <span class="chip"><b>23 года</b></span>
+            <span class="chip">Маркетинг · SMM · комьюнити</span>
+            <span class="chip">Контент · коллаборации · промо</span>
+          </div>
+
+          <div class="grid">
+            <div class="field">
+              <div class="k">Телефон</div>
+              <div class="v"><a href="tel:+789032897820">8&nbsp;903&nbsp;289-78-20</a></div>
+            </div>
+            <div class="field">
+              <div class="k">Почта</div>
+              <div class="v"><a href="mailto:proke2505@gmail.com">proke2505@gmail.com</a></div>
+            </div>
+            <div class="field">
+              <div class="k">Telegram</div>
+              <div class="v"><a href="https://t.me/prokerproke" target="_blank" rel="noopener">@prokerproke</a></div>
+            </div>
+            <div class="field">
+              <div class="k">Ссылки</div>
+              <div class="v">
+                <a href="https://discord.gg/VpGBj8TfHb" target="_blank" rel="noopener">Discord</a> ·
+                <a href="https://twitter.com/urbannode" target="_blank" rel="noopener">Twitter</a> ·
+                <a href="https://magiceden.io/marketplace/urbannode" target="_blank" rel="noopener">Magic Eden</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          Фокус: работа с аудиторией, контент-стратегия, промо-активности и партнёрства в digital/crypto-среде.
+        </div>
+      </section>
+
+      <aside class="card photo">
+        <div class="photo-wrap">
+          <div class="avatar" aria-label="Фотография из резюме">
+
+vadim, [09.02.2026 15:26]
+<img alt="Фото" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIB0aHh0aICwjGh0pIB0aJDUlKC0vMjIyHCM3PDcwOyswMi4BCwsLDw4PHRERHTIpIigwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMv/AABEIAOoA4QMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQIDBgABB//EADUQAAIBAgQDBgUEAwAAAAAAAAECAwQRAAUSITFBEyJRYXGBkaGx0RRCUrHB8COC0v/EABkBAAMBAQEAAAAAAAAAAAAAAAABAgMEBf/EACMRAAMBAAICAgIDAQAAAAAAAAABAhEDEiExBBNBIlFhcaH/2gAMAwEAAhEDEQA/APUoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0kzvYpW0p0x7C2a2vK1lKQq5WbJH2kqzX2k5rj1v0e7o2o4dX3i9QbX0b7dV1dHq0r1b9qWlqfXr2m2nZrKxVn1G2m2mQq1m0mQzQAAABb4lH8Y5a2n8lq0d1lW1b0qQp3y0bVd0eXWvQk0q7F3Yw2wUqK2mO5m1n3h2bZp9f3b1GZkqvU6f8A0jvJ8jv9jvKAAABi2yZfZkqf6a1r6dXr8fU5Tq0p4ZbS8b6m4c7p3d8i8u0+9nXWmV4o2lqVd7Wq0rW1y3t0bZqKQzQAAADhKXjG1X9Lq1pW0p0nQqQqXbGm0b1t0b1m6f0a3c0bS+v3b2yqf0m0m0mQzQAAAB6+qk6fKqvVdS0b0b1q0r0qQp3w0bVd0eXWvQk0q7F3Yw2wUqK2mO5m1n3h2bZp9f3b1GZkqvU6f8A0jvJ8jv9jvKAAAA0b3sZ8mX2ZKn+mt a+nV6/H1OU6tKeGW0vG+puHO6d3fIvLtP vZ11pl eKNpalXe1qtK1tct7dG2aikM0AAAA4Sl4xtV/S6taVtKdJ0KkKl2xptG9bdG9Zun9Gt3NG0vr922yqf0m0m0mQzQAAAB6+qk6fKqvVdS0b0b1q0r0qQp3w0bVd0eXWvQk0q7F3Yw2wUqK2mO5m1n3h2bZp9f3b1GZkqvU6f8A0jvJ8jv9jvKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/Z" />
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="mailto:proke2505@gmail.com">Написать на почту</a>
+          <a class="btn" href="https://t.me/prokerproke" target="_blank" rel="noopener">Открыть Telegram</a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="sections">
+      <section class="card">
+        <div class="card-inner">
+          <h2 class="h">Образование</h2>
+          <div class="li">
+            <div class="title">Российский Государственный Гуманитарный Институт</div>
+            <div class="meta">Бакалавриат · Журналистика</div>
+            <div class="meta">Профиль: мультимедийная журналистика и современные медиатехнологии</div>
+          </div>
+
+          <h2 class="h" style="margin-top:18px">Профессиональные интересы</h2>
+          <ul class="list">
+            <li class="li">Взаимодействие с аудиторией</li>
+            <li class="li">Исследование рынка</li>
+            <li class="li">Разработка стратегий и продвижение</li>
+            <li class="li">Создание рекламных кампаний</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-inner">
+          <h2 class="h">Опыт</h2>
+          <div class="li">
+            <div class="title">Проект в сфере криптовалют</div>
+            <div class="meta">Май 2024 — Ноябрь 2025</div>
+            <ul>
+              <li>Писал посты и вёл коммуникацию для проекта в <b>Twitter</b> и <b>Discord</b>.</li>
+              <li>Выстраивал <b>коллаборации</b> с другими брендами/проектами через Discord и Twitter: находил партнёров, договаривался об условиях, координировал публикации.</li>
+              <li>Проводил <b>акции и промо-активности</b> для роста охватов и вовлечения: механики, анонсы, сопровождение, пост-аналитика.</li>
+              <li>Поддерживал целостный имидж бренда: тон-оф-войс, регулярность, визуальная подача (в связке с материалами/контентом).</li>
+            </ul>
+          </div>
+
+          <h2 class="h" style="margin-top:18px">Софт-скиллы</h2>
+          <ul class="list">
+            <li class="li">Адаптивность</li>
+
+vadim, [09.02.2026 15:26]
+<li class="li">Коммуникабельность</li>
+            <li class="li">Эмпатия</li>
+            <li class="li">Креативность</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const d = new Date();
+    const fmt = new Intl.DateTimeFormat('ru-RU', { day:'2-digit', month:'2-digit', year:'numeric' });
+    document.getElementById('d').textContent = fmt.format(d);
+  </script>
+</body>
+</html>
